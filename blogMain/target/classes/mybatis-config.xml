@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 注册属性文件 -->
+    <properties resource="jdbc.properties" />
+    <!--配置全局属性-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <setting name="logImpl" value="LOG4J" />
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!--类型别名-->
+    <typeAliases>
+        <package name="com.springmvc.pojo" />
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor" >
+            <!--分页参数合理化-->
+            <property name="reasonable" value="true" />
+        </plugin>
+    </plugins>
+
+    <!-- 配置mybatis运行环境 -->
+    <environments default="development">
+        <!-- 配置开发环境 -->
+        <environment id="development">
+            <!-- jdbc事务管理器 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源
+             UNPOOLED 不适用连接池 即 每次请求都会为其创建一个DB连接，适用完毕后，会马上将连接关闭
+             POOLED 数据库连接池来维护连接
+             JNDI 数据源可以定义到应用的外部，通过JDNI容器来获取数据库连接
+             -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClass}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+        <!-- 可以多个环境切换。配置上线环境 -->
+        <environment id="online">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClass}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+    <!-- 映射器 -->
+<!--
+    <mappers>
+        &lt;!&ndash; 注册映射文件 &ndash;&gt;
+        <mapper resource="mapper/mapper.xml"/>
+&lt;!&ndash;        <mapper resource="mapper2.xml"/>&ndash;&gt;
+    </mappers>
+-->
+</configuration>

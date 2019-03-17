@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springmvc.dao.ArticleDao">
+    <!--<insert id="insertStu">
+        insert into student(id,name,score,hobby)
+        values(#{id},#{name},#{score},#{hobby})
+
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+    </insert>
+    <delete id="deleteStu">
+   delete from student where id = #{id}
+  </delete>
+    <update id="updateStu">
+     update student set
+     name = #{name}, score = #{score},hobby= #{hobby}
+     where id = #{id}
+  </update>
+
+    <select id="selectStu" resultType="com.evecom.common.Student">
+     select * from student
+   </select>
+
+    <select id="selectStuById" resultType="com.evecom.common.Student">
+     select * from student where id = #{id}
+   </select>
+
+    <select id="selectStuSlur" resultType="com.evecom.common.Student">
+     select * from student where name like '%' #{name} '%'
+   </select>-->
+
+</mapper>

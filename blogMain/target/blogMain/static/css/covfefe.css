@@ -1,0 +1,28 @@
+.covfefe figure {
+    float: left;
+    width: 25%;
+    overflow: hidden;
+}
+
+.covfefe figure img {
+    width: 100%;
+    margin: auto;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.covfefe figure:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+
+.covfefe ul {
+    float: right;
+    line-height: 20px;
+    width: 75%;
+    color: #474645;
+}
