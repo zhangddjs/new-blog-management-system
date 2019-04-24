@@ -17,6 +17,7 @@
       <module name="SSMTest" options="" />
       <module name="blogMain" options="" />
       <module name="blogSystem" options="" />
+      <module name="newBlogSystem" options="" />
     </option>
   </component>
 </project>
