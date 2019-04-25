@@ -273,52 +273,52 @@ public class CommentExample {
         }
 
         public Criteria andPostTimeEqualTo(Date value) {
-            addCriterionForJDBCDate("post_time =", value, "postTime");
+            addCriterion("post_time =", value, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeNotEqualTo(Date value) {
-            addCriterionForJDBCDate("post_time <>", value, "postTime");
+            addCriterion("post_time <>", value, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeGreaterThan(Date value) {
-            addCriterionForJDBCDate("post_time >", value, "postTime");
+            addCriterion("post_time >", value, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("post_time >=", value, "postTime");
+            addCriterion("post_time >=", value, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeLessThan(Date value) {
-            addCriterionForJDBCDate("post_time <", value, "postTime");
+            addCriterion("post_time <", value, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("post_time <=", value, "postTime");
+            addCriterion("post_time <=", value, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeIn(List<Date> values) {
-            addCriterionForJDBCDate("post_time in", values, "postTime");
+            addCriterion("post_time in", values, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeNotIn(List<Date> values) {
-            addCriterionForJDBCDate("post_time not in", values, "postTime");
+            addCriterion("post_time not in", values, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("post_time between", value1, value2, "postTime");
+            addCriterion("post_time between", value1, value2, "postTime");
             return (Criteria) this;
         }
 
         public Criteria andPostTimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("post_time not between", value1, value2, "postTime");
+            addCriterion("post_time not between", value1, value2, "postTime");
             return (Criteria) this;
         }
 
