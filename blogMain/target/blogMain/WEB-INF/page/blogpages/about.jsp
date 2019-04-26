@@ -88,16 +88,16 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
                 <h4>About</h4>
-                <p>网名：Covfefe | 海飞丝实力派<br>职业：程序猿<br>籍贯：江苏省—无锡市<br>电话：183****9653<br>邮箱：<a href="#">zdd1995<em>@mail.ustc.edu.cn</em></a></p>
+                <p>网名：Covfefe | 海飞丝实力派<br>职业：程序猿<br>籍贯：江苏省—无锡市<br>电话：183****9653<br>邮箱：<a href="mailto:zdd1995@mail.ustc.edu.cn">zdd1995<em>@mail.ustc.edu.cn</em></a></p>
                 <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet
                     fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
             <div class="sidebar-module">
                 <h4>Elsewhere</h4>
                 <ol class="list-unstyled">
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
+                    <li><a href="https://github.com/zhangddjs">GitHub</a></li>
+                    <li><a href="https://twitter.com/covfefe_zdd">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/zhangddjs">Facebook</a></li>
                 </ol>
             </div>
         </div><!-- /.blog-sidebar -->

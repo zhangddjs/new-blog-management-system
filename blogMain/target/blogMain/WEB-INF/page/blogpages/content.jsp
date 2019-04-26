@@ -62,7 +62,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
                 <h4>About</h4>
-                <p>网名：Covfefe | 海飞丝实力派<br>职业：程序猿<br>籍贯：江苏省—无锡市<br>电话：183****9653<br>邮箱：<a href="#">zdd1995<em>@mail.ustc.edu.cn</em></a>
+                <p>网名：Covfefe | 海飞丝实力派<br>职业：程序猿<br>籍贯：江苏省—无锡市<br>电话：183****9653<br>邮箱：<a href="mailto:zdd1995@mail.ustc.edu.cn">zdd1995<em>@mail.ustc.edu.cn</em></a>
                 </p>
                 <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet
                     fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -70,9 +70,9 @@
             <div class="sidebar-module">
                 <h4>Elsewhere</h4>
                 <ol class="list-unstyled">
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
+                    <li><a href="https://github.com/zhangddjs">GitHub</a></li>
+                    <li><a href="https://twitter.com/covfefe_zdd">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/zhangddjs">Facebook</a></li>
                 </ol>
             </div>
         </div><!-- /.blog-sidebar -->
@@ -142,7 +142,7 @@
         //获取类别
         getCategories("#category_article_select");
         getArticleById(${articleId});
-        getComments();
+        getComments(${articleId});
     })
 
     //获取类别
@@ -235,10 +235,10 @@
 
     //获取评论
     //查出所有的评论信息并显示在下拉列表中
-    function getComments() {
+    function getComments(id) {
         $("#comments_divs").empty();
         $.ajax({
-            url: "${APP_PATH}/comments",
+            url: "${APP_PATH}/comments/" + id,
             type: "GET",
             success: function (result) {
                 //显示评论信息在下拉列表中
@@ -309,20 +309,29 @@
     //评论按钮事件
     $("#comment_button").click(function () {
         var commentContent = $("#comment_text").val();
+        var d, s = ""; //Declare variables.
+        d = new Date(); //Create Date object.
+        s += (d.getMonth() + 1) + "/"; //Get month
+        s += d.getDate() + "/"; //Get day
+        s += d.getYear()+" ";
+        s += d.getHours()+":";
+        s += d.getMinutes()+":";
+        s += d.getSeconds();
+        console.log(getMyDate(new Date()));
         $.ajax({
             url: "${APP_PATH}/comment",
             type: "POST",
             data: $.param({
                 content: commentContent,    //包括<div id=...>自身
                 visitorName: $("#comment_visitor_input").val(),        //需要修改
-                postTime: new Date(),
+                postTime: new Date(getMyDate(new Date())),
                 articleId: ${articleId},
             }),
             success: function (result) {
                 //alert(result.msg);
                 if (result.code == 100) {
                     getArticleById(${articleId});
-                    getComments();
+                    getComments(${articleId});
                 } else {
                     if (undefined != result.extend.errorFields.categoryName) {
                         show_validate_msg("#categoryName_add_input", "error", result.extend.errorFields.categoryName);

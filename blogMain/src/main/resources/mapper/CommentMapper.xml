@@ -13,7 +13,7 @@
   <resultMap extends="ResultMapWithBLOBs" id="ResultMapWithBLOBsAndArticle" type="com.springmvc.pojo.Comment">
     <association property="article" javaType="com.springmvc.pojo.Article">
       <id column="id" property="id" />
-      <result column="article_name" property="articleName" />
+      <result column="title" property="title" />
     </association>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -75,7 +75,7 @@
     </where>
   </sql>
   <sql id="WithArticle_Column_List">
-    co.id,  co.visitor_name, co.post_time, co.article_id, ar.id, ar.title
+    co.id, co.visitor_name, co.post_time, co.article_id, ar.id, ar.title
   </sql>
   <sql id="Base_Column_List">
     id, visitor_name, post_time, article_id
@@ -275,77 +275,4 @@
       article_id = #{articleId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.springmvc.pojo.Comment">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="visitor_name" jdbcType="VARCHAR" property="visitorName" />
-    <result column="post_time" jdbcType="DATE" property="postTime" />
-    <result column="article_id" jdbcType="INTEGER" property="articleId" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.springmvc.pojo.Comment">
-    <result column="content" jdbcType="LONGVARCHAR" property="content" />
-  </resultMap>
-  <resultMap extends="ResultMapWithBLOBs" id="ResultMapWithBLOBsAndArticle" type="com.springmvc.pojo.Comment">
-    <association javaType="com.springmvc.pojo.Article" property="article">
-      <id column="id" property="id" />
-      <result column="article_name" property="articleName" />
-    </association>
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
 </mapper>

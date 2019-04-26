@@ -108,6 +108,18 @@ public class PageController {
     }
 
     /**
+     * 跳转到评论管理页面comment.jsp
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/commentPage")
+    public ModelAndView commentPage(){
+        ModelAndView retMap = new ModelAndView();  //返回新的ModelAndView
+        retMap.setViewName("master/comment");
+        return retMap;
+    }
+
+    /**
      * 跳转到文章添加页面article_add.jsp
      * @return
      */

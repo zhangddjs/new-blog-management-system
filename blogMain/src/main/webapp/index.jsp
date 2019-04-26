@@ -64,7 +64,7 @@
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p>Blog for <a href="${APP_PATH}/covfefe">Covfefe</a>, by <a href="#">@zdd</a>.</p>
+                    <p>Blog for <a href="${APP_PATH}/covfefe">Covfefe</a>, by <a href="mailto:zdd1995@mail.ustc.edu.cn">@zdd</a>.</p>
                 </div>
             </div>
 

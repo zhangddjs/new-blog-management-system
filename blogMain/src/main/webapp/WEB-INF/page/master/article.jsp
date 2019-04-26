@@ -79,6 +79,8 @@
                                                           aria-hidden="true"></span> Draft</a></li>
                 <li><a href="${APP_PATH}/recyclePage"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     Recycle</a></li>
+                <li><a href="${APP_PATH}/commentPage"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                    COMMENT</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
